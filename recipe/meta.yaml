@@ -1,5 +1,5 @@
 {% set name = "jobs_done10" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3712b9da1fa8c71e4e946184503529a1d1b4529beb46b0b96080a81f69ca3e5f
+  sha256: 6f454412abde0e070712238ff1f2db1c93f94453cfad8240a14bd8a924b6b82d
 
 build:
   noarch: python
