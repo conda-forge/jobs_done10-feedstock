@@ -33,6 +33,7 @@ requirements:
 
 test:
   requires:
+    - git
     - pytest
     - pytest-mock
     - requests-mock
