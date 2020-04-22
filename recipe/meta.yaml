@@ -1,20 +1,20 @@
 {% set name = "jobs_done10" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6f454412abde0e070712238ff1f2db1c93f94453cfad8240a14bd8a924b6b82d
+  sha256: 8755109e01dfdcc901e52b34d7a9ae510002b14dea94ee7aeac79b58fe823782
 
 build:
   noarch: python
   number: 0
   entry_points:
     - jobs_done=jobs_done10.cli:jobs_done
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
