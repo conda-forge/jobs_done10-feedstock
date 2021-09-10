@@ -1,20 +1,22 @@
 {% set name = "jobs_done10" %}
-{% set version = "1.2.2" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 01f24439c5bebac023463c157a64384067e516b45fa96a222f7620f2f1883bf8
+  url: https://github.com/ESSS/jobs_done10/archive/{{ version }}.tar.gz
+  sha256: a9e5c661dc668d7d2ec3befe3c1391ba4b60228c89de6a4245558a11ef79b5b9
 
 build:
   noarch: python
   number: 0
   entry_points:
     - jobs_done=jobs_done10.cli:jobs_done
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
+  script:
+    - 'export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}'
+    - '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
@@ -60,3 +62,4 @@ extra:
     - igortg
     - nicoddemus
     - tadeu
+    - tarcisioe
