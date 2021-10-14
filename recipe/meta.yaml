@@ -1,5 +1,5 @@
 {% set name = "jobs_done10" %}
-{% set version = "1.3.1" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ESSS/jobs_done10/archive/{{ version }}.tar.gz
-  sha256: f5db8e28d71d4d449258b9df241afeaa1dab8471f9ee9fff1bb84a04202c62db
+  sha256: 9f5cc8fa2effd5e674ed8d67c51caed727c9e7c5ba1facc9dcfb01165aabad0e
 
 build:
   noarch: python
@@ -15,7 +15,7 @@ build:
   entry_points:
     - jobs_done=jobs_done10.cli:jobs_done
   script:
-    - 'export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}'
+    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
     - '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
