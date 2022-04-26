@@ -26,6 +26,7 @@ requirements:
   run:
     - click
     - flask
+    - gunicorn
     - mailer
     - pygments
     - python >=3.6
@@ -38,6 +39,7 @@ test:
     - git
     - pytest
     - pytest-mock
+    - pytest-regressions
     - requests-mock
   imports:
     - jobs_done10
