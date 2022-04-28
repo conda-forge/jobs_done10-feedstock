@@ -41,11 +41,6 @@ test:
     - requests-mock
   imports:
     - jobs_done10
-    - jobs_done10._tests
-    - jobs_done10.generators
-    - jobs_done10.generators._tests
-    - jobs_done10.xml_factory
-    - jobs_done10.xml_factory._tests
   source_files:
     - tests
   commands:
