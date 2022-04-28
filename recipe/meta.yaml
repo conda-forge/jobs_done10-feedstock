@@ -1,5 +1,5 @@
 {% set name = "jobs_done10" %}
-{% set version = "1.5.0" %}
+{% set version = "1.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ESSS/jobs_done10/archive/{{ version }}.tar.gz
-  sha256: d4cacb153d5e0bd715669666cbf728dfc44b8c4947bc88bc1c22e1ef5ee69edd
+  sha256: 31e40396e4572a4926227516603d8c7b1321fbb86cccdf6f7abccbd192cd4320
 
 build:
   noarch: python
@@ -26,6 +26,7 @@ requirements:
   run:
     - click
     - flask
+    - gunicorn
     - mailer
     - pygments
     - python >=3.6
@@ -36,19 +37,16 @@ requirements:
 test:
   requires:
     - git
-    - pytest
     - pytest-mock
+    - pytest-regressions
     - requests-mock
   imports:
     - jobs_done10
-    - jobs_done10._tests
-    - jobs_done10.generators
-    - jobs_done10.generators._tests
-    - jobs_done10.xml_factory
-    - jobs_done10.xml_factory._tests
+  source_files:
+    - tests
   commands:
     - jobs_done --help
-    - pytest --pyargs jobs_done10
+    - pytest tests
 
 about:
   home: https://github.com/ESSS/jobs_done10
