@@ -46,9 +46,11 @@ test:
     - jobs_done10.generators._tests
     - jobs_done10.xml_factory
     - jobs_done10.xml_factory._tests
+  source_files:
+    - tests
   commands:
     - jobs_done --help
-    - pytest --pyargs jobs_done10
+    - pytest tests
 
 about:
   home: https://github.com/ESSS/jobs_done10
