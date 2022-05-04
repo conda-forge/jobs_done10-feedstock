@@ -42,11 +42,8 @@ test:
     - requests-mock
   imports:
     - jobs_done10
-  source_files:
-    - tests
   commands:
     - jobs_done --help
-    - pytest tests
 
 about:
   home: https://github.com/ESSS/jobs_done10
