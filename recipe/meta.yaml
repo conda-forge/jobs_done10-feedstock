@@ -1,5 +1,5 @@
 {% set name = "jobs_done10" %}
-{% set version = "1.8.0" %}
+{% set version = "1.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ESSS/jobs_done10/archive/{{ version }}.tar.gz
-  sha256: 5230c4eae59113a4acf40099f9f9bd9392814d01c8a01f9382379c4e14e19045
+  sha256: a8fb1a90f38ab29a2f3a2d7e0d4c958e4dfdbc795db6f8d1b5d947a39a2d4c40
 
 build:
   noarch: python
