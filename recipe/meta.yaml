@@ -21,15 +21,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.10
     - setuptools_scm
   run:
     - click
     - flask
     - gunicorn
-    - mailer
     - pygments
-    - python >=3.6
+    - python >=3.10
     - python-dotenv
     - python-jenkins
     - pyyaml
