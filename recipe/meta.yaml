@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "jobs_done10" %}
 {% set version = "1.11.0" %}
 
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - jobs_done=jobs_done10.cli:jobs_done
   script:
@@ -21,14 +22,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python {{ python_min }}
+    - setuptools
     - setuptools_scm
   run:
     - click
     - flask
     - gunicorn
     - pygments
-    - python >=3.10
+    - python >={{ python_min }}
     - python-dotenv
     - python-jenkins
     - pyyaml
@@ -39,6 +41,7 @@ test:
     - pytest-mock
     - pytest-regressions
     - requests-mock
+    - python {{ python_min }}
   imports:
     - jobs_done10
   commands:
